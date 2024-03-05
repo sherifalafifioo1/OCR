@@ -6,8 +6,7 @@
 
 import json
 from flask import Flask, render_template, jsonify, request
-import model1 
-import cv2
+
 app = Flask(__name__)
 
 @app.route('/predict_image', methods=['POST'])
