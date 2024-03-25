@@ -5,4 +5,4 @@ DeepFace
 pytesseract
 opencv-python
 numpy
-Authentaction
+
