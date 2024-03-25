@@ -5,4 +5,5 @@ DeepFace
 pytesseract
 opencv-python
 numpy
+TensorRT
 
