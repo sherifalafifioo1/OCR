@@ -21,4 +21,4 @@ ENV TESSDATA_PREFIX=/usr/share/tesseract-ocr/tessdata
 
 COPY . .
 
-CMD ["gunicorn", "app:app"]
+CMD ["gunicorn", "main:app"]
