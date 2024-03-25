@@ -3,6 +3,6 @@ flask
 requests
 DeepFace
 pytesseract
-cv2
+opencv-python
 numpy
 Authentaction
