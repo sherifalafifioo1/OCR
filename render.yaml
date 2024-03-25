@@ -1,0 +1,6 @@
+services:
+  - name: main
+    dockerfile: Dockerfile
+    env:
+      - key: PORT
+        value: 8000
