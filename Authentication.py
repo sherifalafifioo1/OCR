@@ -246,19 +246,7 @@ def match_user_id_pic(ID_path,pic_path):
     return(obj['verified'])
 #-----------------------------------------------
 
-#--------testing------
-img_path = "C:\\Users\\USER\\Documents\\Grad_project\\Authentication\\data\\RK_ID_NO_EDIT.jpg" 
-img1_path = "C:\\Users\\USER\\Documents\\Grad_project\\Authentication\\data\\rk.jpg"
-img2_path = "C:\\Users\\USER\\Documents\\Grad_project\\Authentication\\data\\wrap.output_resized.jpg"
-print(OCR_pipline(img_path))  # return integer ID_number
-print(match_user_id_pic(img1_path,img2_path))  # retrun True / False
-# img_p = get_img_from_path(img_path)
-# contoured_pic = get_contours(img_p)
-while(1):
-    k = cv2.waitKey(1)
-    if k == ord('q'):
-        break
-cv2.destroyAllWindows()
+
 
 
 # In[ ]:
