@@ -1,17 +1,25 @@
-FROM python:3.9-slim-buster
+FROM python:3.9
 
-WORKDIR /app
+# Update package repositories
+RUN apt-get update
 
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
-
-
-# Install Tesseract-OCR libraries
+# Install Tesseract-OCR and related packages
 RUN apt-get install -y tesseract-ocr libtesseract-dev
 
-# Set environment variable for Tesseract data path (adjust path if needed)
-ENV TESSDATA_PREFIX=/usr/share/tesseract-ocr/tessdata
+# Set the working directory in the container
+WORKDIR /app
 
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install the Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the application code into the container
 COPY . .
 
-CMD ["gunicorn", "main:app"]
+# Expose the port on which the Flask app will run
+EXPOSE 8000
+
+# Set the entry point command for the container
+CMD ["python", "main.py"]
