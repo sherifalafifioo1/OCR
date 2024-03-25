@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # In[1]:
-pip install tf-keras
+
 import cv2 
 import numpy as np
 import pytesseract
