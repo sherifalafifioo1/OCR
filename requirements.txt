@@ -6,4 +6,5 @@ pytesseract
 opencv-python
 numpy
 TensorRT
+tf-keras
 
