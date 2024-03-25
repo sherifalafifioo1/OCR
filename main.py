@@ -1,7 +1,6 @@
 import json
 from flask import Flask, render_template, jsonify, request
-import Authentication 
-from Authentication import match_user_id_pic,OCR_pipline 
+from Authentication import match_user_id_pic ,OCR_pipline  
 import cv2
 
 app = Flask(__name__)
