@@ -1,3 +1,8 @@
 gunicorn
 flask
 requests
+DeepFace
+pytesseract
+cv2
+numpy
+Authentaction
