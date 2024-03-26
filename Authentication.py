@@ -211,7 +211,7 @@ def rotate_img(img_source,angle=270):
     return img_destination
 #------------------------------------------------
 #------------------------------------------------
-def OCR_pipline(img_path=''):
+def OCR_pipline(img):
     """from ID img to ID number through applying contours and wrap prespective , cropping the image , thresholding and finally applying OCR
 
     Args:
@@ -224,7 +224,7 @@ def OCR_pipline(img_path=''):
     Returns:
         int: ID number
     """
-    img = get_img_from_path(img_path)
+
     contoured_pic = get_contours(img)  
     ID_pic = crop_and_threshold(contoured_pic)
     string_OCR = OCR_pytesseract(ID_pic).replace(" ","").replace("\n","").rstrip()
@@ -238,10 +238,8 @@ def OCR_pipline(img_path=''):
 #Second part: deepface library
 
 
-def match_user_id_pic(ID_path,pic_path):
-    ID_pic = get_img_from_path(ID_path)
-    user_pic = get_img_from_path(pic_path)
-    obj = DeepFace.verify(ID_pic,user_pic
+def match_user_id_pic(ID_img,pic):
+    obj = DeepFace.verify(ID_img,pic
             , model_name = 'ArcFace', detector_backend = 'retinaface')
     return(obj['verified'])
 #-----------------------------------------------
