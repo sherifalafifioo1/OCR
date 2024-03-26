@@ -10,34 +10,29 @@ app = Flask(__name__)
 @app.route('/predict_image', methods=['POST'])
 def predict_image():
     # Check if images are present and valid
-    if 'image1' not in request.json or 'image2' not in request.json:
+    if 'image1' not in request.files or 'image2' not in request.files:
         return jsonify({"status": 400, "msg": "Missing one or both images (image1, image2)"}), 400
 
     try:
-        # Retrieve and decode base64-encoded images
-        image1_base64 = request.json['image1']
-        image2_base64 = request.json['image2']
-        image1_data = base64.b64decode(image1_base64)
-        image2_data = base64.b64decode(image2_base64)
+        # Read images from form data
+        image1_file = request.files['image1']
+        image2_file = request.files['image2']
 
-        # Convert image data to numpy arrays
-        image1_array = np.frombuffer(image1_data, np.uint8)
-        image2_array = np.frombuffer(image2_data, np.uint8)
+        # Process images (requires additional logic to convert to NumPy arrays)
+        image1_data = image1_file.read()  # You'll need to convert this to a NumPy array
+        image2_data = image2_file.read()  # You'll need to convert this to a NumPy array
 
-        # Read images using OpenCV
-        image1 = cv2.imdecode(image1_array, cv2.IMREAD_COLOR)
-        image2 = cv2.imdecode(image2_array, cv2.IMREAD_COLOR)
 
         # Process images
-        id_number = OCR_pipline(image1)
-        is_valid = match_user_id_pic(image1, image2)
+        id_number = OCR_pipline(image1_data)
+        is_valid =str( match_user_id_pic(image1_data, image2_data))
 
         # Return response
         return jsonify({
             "status": 200,
             "data": {
                 "id_number": id_number,
-                "is_valid": str(is_valid)
+                "is_valid": is_valid
             }
         })
     except Exception as e:
