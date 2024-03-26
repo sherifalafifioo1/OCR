@@ -28,7 +28,7 @@ def predict_image():
         "status": 200,
         "data": {
             "id_number": id_number,
-            "is_valid": is_valid
+            "is_valid":str( is_valid)
         }
     })
   except Exception as e:
