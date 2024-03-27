@@ -238,6 +238,8 @@ def OCR_pipline(img):
 
 
 def match_user_id_pic(ID_img,pic):
+
+    print("deeep")
     obj = DeepFace.verify(ID_img,pic
             , model_name = 'ArcFace', detector_backend = 'retinaface')
     return(obj['verified'])
