@@ -6,4 +6,4 @@ pytesseract
 opencv-python
 numpy
 tf-keras
-os
+
