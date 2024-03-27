@@ -1,4 +1,4 @@
-gunicorn
+ogunicorn
 flask
 requests
 DeepFace
@@ -6,4 +6,4 @@ pytesseract
 opencv-python
 numpy
 tf-keras
-
+os
