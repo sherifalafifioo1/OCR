@@ -15,6 +15,8 @@ COPY ara_number.traineddata ./ara_number.traineddata
 # Install Tesseract-OCR libraries
 RUN apt-get install -y tesseract-ocr libtesseract-dev
 
+RUN apt-get install libgl1
+
 # Set environment variable for Tesseract data path (adjust path if needed)
 ENV TESSDATA_PREFIX=/usr/share/tesseract-ocr/tessdata
 
