@@ -12,8 +12,8 @@ def predict_image():
     try:
         # Check if images are present and valid
         if 'image1' not in request.files or 'image2' not in request.files:
-            return jsonify({"status": 400, "msg": "Missing one or both images (image1, image2)"}), 400
-         print("first")
+            return jsonify({"status": 400, "msg": "Missing one or both images (image1, image2)"}), 400 
+    
         # Read images from form data and convert to NumPy arrays
         image1_file = request.files['image1']
         image1_data = np.frombuffer(image1_file.read(), np.uint8)
