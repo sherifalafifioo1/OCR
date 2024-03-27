@@ -243,7 +243,7 @@ def match_user_id_pic(ID_img, pic):
     print("deep")
 
     # Verify the images using DeepFace
-    obj = DeepFace.verify(ID_img, pic, model_name='ArcFace', detector_backend='retinaface', model=weights_path)
+    obj = DeepFace.verify(ID_img, pic,  model_name = 'ArcFace', detector_backend = 'retinaface')
     print("final")
 
     
