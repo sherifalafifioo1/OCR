@@ -8,7 +8,6 @@ import numpy as np
 import pytesseract
 from deepface import DeepFace
 from tensorflow import keras
-pytesseract.pytesseract.tesseract_cmd = '/usr/share/tesseract-ocr/tessdata'  # need to be changed to the server path
 
 #img = cv2.imread("D:\Reham\DATA\Graduation_project\OCR\data\wrap.jpg") # need to be replaced get_img function
 
