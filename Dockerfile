@@ -20,8 +20,6 @@ ENV TESSDATA_PREFIX=/usr/share/tesseract-ocr/tessdata
 
 RUN apt-get update && apt-get install -y libgl1
 
-COPY  arcface_weights.h5 /app/tessdata/
-
 
 RUN pip install -r requirements.txt
 
