@@ -22,7 +22,7 @@ def predict_image():
         image2_file = request.files['image2']
         image2_data = np.frombuffer(image2_file.read(), np.uint8)
         image2_array = cv2.imdecode(image2_data, cv2.IMREAD_COLOR)
-
+        print("good")
         # Process images
         is_valid = str(match_user_id_pic(image1_array, image2_array))
 
@@ -30,7 +30,6 @@ def predict_image():
         return jsonify({
             "status": 200,
             "data": {
-                "id_number": id_number,
                 "is_valid": is_valid
             }
         })
