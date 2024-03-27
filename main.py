@@ -24,7 +24,6 @@ def predict_image():
         image2_array = cv2.imdecode(image2_data, cv2.IMREAD_COLOR)
 
         # Process images
-        id_number = OCR_pipline(image1_array)
         is_valid = str(match_user_id_pic(image1_array, image2_array))
 
         # Return response
