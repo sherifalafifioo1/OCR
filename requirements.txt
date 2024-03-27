@@ -1,4 +1,4 @@
-ogunicorn
+gunicorn
 flask
 requests
 DeepFace
