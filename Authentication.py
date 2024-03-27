@@ -242,7 +242,7 @@ def OCR_pipline(img):
 def match_user_id_pic(ID_img, pic):
     print("deep")
     # Set the path to the downloaded "arcface_weights.h5" file
-    weights_path = "/app/tessdata/arcface_weights.h5"
+    weights_path = "https://github.com/serengil/deepface_models/releases/download/v1.0/arcface_weights.h5"
 
     # Check if the weights file exists
     if not os.path.exists(weights_path):
