@@ -13,7 +13,7 @@ def predict_image():
         # Check if images are present and valid
         if 'image1' not in request.files or 'image2' not in request.files:
             return jsonify({"status": 400, "msg": "Missing one or both images (image1, image2)"}), 400
-
+         print("first")
         # Read images from form data and convert to NumPy arrays
         image1_file = request.files['image1']
         image1_data = np.frombuffer(image1_file.read(), np.uint8)
@@ -25,7 +25,7 @@ def predict_image():
         print("good")
         # Process images
         is_valid = str(match_user_id_pic(image1_array, image2_array))
-
+        print("return")
         # Return response
         return jsonify({
             "status": 200,
