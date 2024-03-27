@@ -16,16 +16,14 @@ def predict_image():
 
         # Read images from form data and convert to NumPy arrays
         image1_file = request.files['image1']
-        image1_data = np.frombuffer(image1_file.read(), np.uint8)
-        image1_array = cv2.imdecode(image1_data, cv2.IMREAD_COLOR)
+       
 
         image2_file = request.files['image2']
-        image2_data = np.frombuffer(image2_file.read(), np.uint8)
-        image2_array = cv2.imdecode(image2_data, cv2.IMREAD_COLOR)
+        
 
         # Process images
-        id_number = OCR_pipline(image1_array)
-        is_valid = str(match_user_id_pic(image1_array, image2_array))
+        id_number = OCR_pipline(image1_file)
+        is_valid = str(match_user_id_pic(image1_file, image2_file))
 
         # Return response
         return jsonify({
